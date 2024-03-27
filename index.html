@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark and Light</title>
+</head>
+<style>
+    .active {
+        border: 1px solid gray;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .discription {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    .theme-icons {
+        margin: 0px 5px;
+        height: 40px;
+        cursor: pointer;
+        background-color: rgb(249, 239, 239);
+        border-radius: 5px;
+    }
+
+
+
+    .container-light {
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 20px;
+        width: 70%;
+        margin: 20px auto;
+    }
+
+    .container-dark {
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        width: 70%;
+        margin: 20px auto;
+    }
+
+
+    /* Use when we get id body as id */
+    .dark-theme {
+        background-color: black;
+        color: white;
+    }
+
+    .light-theme {
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<body id="body">
+    <div id="container" class="container-light">
+        <h1 class="title"> Dark & Light Theme Changer </h1>
+        <img id="dark-img" class="theme-icons active " src="./mode.png" onclick="darkmode()" />
+        <img id="light-img" class="theme-icons " src="./white-balance.png" onclick="lightmode()" /><br>
+        <p class="discription"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, tenetur veniam.
+            Molestias, excepturi ducimus. Quasi consequatur, soluta saepe, cum ducimus quis unde facilis eum adipisci
+            ipsam exercitationem doloremque! Veritatis, quo?<br><br>
+           
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, tenetur veniam.
+            Molestias, excepturi ducimus. Quasi consequatur, soluta saepe, cum ducimus quis unde facilis eum adipisci
+            ipsam exercitationem doloremque! Veritatis, quo?</p>
+    </div>
+
+
+    <script>
+
+        function darkmode() {
+
+            const dark = document.getElementById('dark-img');
+            dark.classList.add('active');
+
+            const light = document.getElementById('light-img');
+            light.classList.remove('active');
+
+            const container = document.getElementById("container");
+            container.className = "container-dark";
+
+            const body = document.getElementById("body");
+            body.className = "dark-theme";
+
+        }
+
+
+        function lightmode() {
+
+            const dark = document.getElementById('dark-img');
+            dark.classList.remove('active');
+
+            const light = document.getElementById('light-img');
+            light.classList.add('active');
+
+
+            const container = document.getElementById("container");
+            container.className = "container-light";
+
+            const body = document.getElementById("body");
+            body.className = "light-theme";
+
+        }
+
+    </script>
+</body>
+
+</html>
